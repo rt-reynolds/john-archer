@@ -1,0 +1,47 @@
+body{
+  background-image: url('libraries/pictures/homePageBackground.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+div{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 5p
+  padding-left: 10px;
+  padding-right: 10px;
+  border-width: 10px;
+  border-style: inset;
+  border-color: grey;
+  position: relative;
+
+
+  color: darkred;
+  background: rgba(210, 212, 201, 0.75);
+
+  margin: auto;
+}
+#title{
+  font-size: 30px;
+  font-family: 'Zilla Slab', serif;
+}
+p{
+  font-size: 26px;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+#newbody{
+  text-align: inherit;
+  display: flex;
+
+  color: none;
+}
+#centerContainer{
+  text-align: inherit;
+  margin-left: 150px;
+  margin-right: 150px;
+  color: transparent;
+}

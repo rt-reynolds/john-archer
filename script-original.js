@@ -103,7 +103,7 @@ function draw() {
   }
 
 
-    archer.checkReset();
+  archer.checkReset();
   // console.log(cycleFinish)
 
 
@@ -140,43 +140,43 @@ class Archer {
     this.volume = 0;
   }
   update() {
-  if(this.isMad) {
-    if (this.angerCounter === 10000) {
-      this.isMad = false;
+    if(this.isMad) {
+      if (this.angerCounter === 10000) {
+        this.isMad = false;
+      } else {
+        this.angerCounter += 1;
+        this.archerAnger();
+      }
     } else {
-      this.angerCounter += 1;
-      this.archerAnger();
-    }
-  } else {
       this.counter += 1;
       if(this.counter == 0){
-      archerFlag1 = true;
-      audioFlag1 = true;
-    }else if(this.counter == this.randomStandby + this.randomReadying){
-      archerFlag2 = true;
-      audioFlag2 = true;
+        archerFlag1 = true; // bow
+        audioFlag1 = true; // bow standby
+      }else if(this.counter == this.randomStandby + this.randomReadying){
+        archerFlag2 = true; // bow Raised
+        audioFlag2 = true; // bow readying
 
-    }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate){
-      archerFlag3 = true;
-      audioFlag3 = true;
+      }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate){
+        archerFlag3 = true; // bow draw
+        audioFlag3 = true; // bow draw
 
-    }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold){
-      archerFlag4 = true;
-      audioFlag4 = true;
+      }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold){
+        archerFlag4 = true; // bow release
+        audioFlag4 = true; //  bow release
 
-    // }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 40 && this.coinFlip - 0.6 >= 0){
-    //   archerFlag5 = true;
-    //   audioFlag5 = true;
-    //   this.successCheck = false;
-  }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 40 && this.coinFlip - 0.6 >= 0){
-    archerFlag5 = true;
-    audioFlag5 = true;
-    this.successCheck = false;
-  }else if(this.successCheck && this.counter >= this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 200 && this.coinflip - 0.6 < 0){
-      cycleFinish = true;
+        // }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 40 && this.coinFlip - 0.6 >= 0){
+        //   archerFlag5 = true;
+        //   audioFlag5 = true;
+        //   this.successCheck = false;
+      }else if(this.counter == this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 40 && this.coinFlip - 0.6 >= 0){
+        archerFlag5 = true; // bowFinish/angerSpeak
+        audioFlag5 = true; // bow bang
+        this.successCheck = false;
+      }else if(this.successCheck && this.counter >= this.randomStandby + this.randomReadying + this.randomAnticipate + this.randomHold + 200 && this.coinflip - 0.6 < 0){
+        cycleFinish = true;
+      }
     }
   }
-}
   archerImage(){
     if(archerFlag1){
       image(archer1, 216, 337); //read 216
